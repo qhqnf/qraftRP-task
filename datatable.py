@@ -30,5 +30,23 @@ class DataTable:
                 if row == [""]:
                     break
 
+            # create dataframe
+            from pandas import DataFrame
+            import numpy as np
+
+            # 1
+            index = [i for i in range(3)]
+            df = DataFrame(result, columns=column_name, index=index)
+            print(df)
+
+            """
+            # 2
+            index = [i for i in range(3)]
+            df = DataFrame(columns=column_name, index=index)
+            for i in index:
+                df.loc[i] = result[i]
+            print(df)
+            """
+
         return result
 
